@@ -52,8 +52,9 @@ export const EmailCardAddButton = (_a) => {
 };
 export class EmailCard extends React.Component {
     render() {
-        const _a = this.props, { className, details, disableInboxDetails, editable, editing, live, n, onContentEditClick, onSaveAlertClick, paused, renderActions, renderAlert, renderSendTimeLink, sendTimeValue, statistics, thumbnailUrl } = _a, attributes = __rest(_a, ["className", "details", "disableInboxDetails", "editable", "editing", "live", "n", "onContentEditClick", "onSaveAlertClick", "paused", "renderActions", "renderAlert", "renderSendTimeLink", "sendTimeValue", "statistics", "thumbnailUrl"]);
+        const _a = this.props, { className, details, disableInboxDetails, editable, editing, live, n, onContentEditClick, onSaveAlertClick, paused, renderActions, renderAlert, renderSendTimeLink, renderSendTimeAlert, sendTimeValue, statistics, thumbnailUrl } = _a, attributes = __rest(_a, ["className", "details", "disableInboxDetails", "editable", "editing", "live", "n", "onContentEditClick", "onSaveAlertClick", "paused", "renderActions", "renderAlert", "renderSendTimeLink", "renderSendTimeAlert", "sendTimeValue", "statistics", "thumbnailUrl"]);
         const alertEl = renderAlert && renderAlert();
+        const sendTimeAlert = renderSendTimeAlert && renderSendTimeAlert();
         return (React.createElement("div", Object.assign({ className: cn('email-card-wrap', Styles['email-card-wrap'], className, {
                 [Styles['has-alert']]: !!this.props.renderAlert,
                 'has-alert': !!this.props.renderAlert,
@@ -65,7 +66,7 @@ export class EmailCard extends React.Component {
                 'is-paused': this.props.paused,
                 [Styles['is-disable-inbox-details']]: this.props.disableInboxDetails,
             }) }, attributes),
-            React.createElement(EmailCardSendTime, { value: sendTimeValue, renderSendTimeLink: renderSendTimeLink, alert: alertEl }),
+            React.createElement(EmailCardSendTime, { value: sendTimeValue, renderSendTimeLink: renderSendTimeLink, alert: sendTimeAlert }),
             statistics && (React.createElement(Statistics, { commonClass: "email-stats" },
                 React.createElement(EmailCardStat, { specificClass: "", statistic: statistics.sent }),
                 React.createElement(EmailCardStat, { specificClass: "delivered", statistic: statistics.delivered }),

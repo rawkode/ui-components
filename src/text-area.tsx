@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, RefObject } from 'react';
 import Icon from './icon';
 import Styles from './styles/text-area.module.scss';
 import Tooltip, { TooltipDirection } from './tooltip';
@@ -30,7 +30,7 @@ export class TextArea extends Component<
   };
 
   public state = { focused: false };
-  public textarea: HTMLTextAreaElement;
+  public textarea: RefObject<HTMLTextAreaElement>;
 
   public get height(): string {
     const { maxHeight } = this.props;
@@ -40,9 +40,9 @@ export class TextArea extends Component<
     }
 
     // This is a terrible, yet necessary, idea.
-    this.textarea.style.height = '';
+    this.textarea.current.style.height = '';
 
-    return `${Math.min(this.textarea.scrollHeight, maxHeight)}px`;
+    return `${Math.min(this.textarea.current.scrollHeight, maxHeight)}px`;
   }
 
   public setFocused = () => this.setState({ focused: true });
@@ -99,7 +99,7 @@ export class TextArea extends Component<
           onBlur={this.setBlurred}
           disabled={disabled}
           style={{ height: this.height }}
-          ref={textarea => (this.textarea = textarea)}
+          ref={this.textarea}
           {...attributes}
         />
         {info && (

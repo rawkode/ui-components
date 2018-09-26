@@ -1,6 +1,6 @@
 import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react';
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Action, Actions } from '../src/actions';
 import Alert from '../src/alert';
 import Button from '../src/button';
@@ -8,6 +8,7 @@ import {
   EmailCard,
   EmailCardAddButton,
 } from '../src/email-card';
+import Icon from '../src/icon';
 const loaderStories = storiesOf('EmailCard', module);
 
 const statistics = {
@@ -139,13 +140,16 @@ loaderStories.add('Email Card - Multi Live', () => (
 const renderAlert = () => {
   return (
     <Alert dismissable={false} type="warning" icon="info-circle">
-    <p>
-      Changes you've made to this email have not been applied to your live automation.
-      <Button type="primary" small>
-        Save and Apply
-      </Button>
-    </p>
-  </Alert>);
+        <Fragment>
+            Changes you've made to this email have not been applied to your live automation.
+          <Button onClick={() => {}} type="primary" small>
+         Save and Apply
+          </Button>
+          <span className="discard-icon" data-tooltip="Discard Changes" data-tooltip-pos="up">
+            <Icon type="trash" onClick={() => {}} />
+          </span>
+        </Fragment>
+      </Alert>);
 };
 
 loaderStories.add('Email Card with Alerts ', () => (

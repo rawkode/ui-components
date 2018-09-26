@@ -58,6 +58,7 @@ export type HTMLInputElementProps = Partial<
   Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onBlur' | 'onChange'>
 >;
 
+// DEBT: (MCFE-746) Make ui-component text inputs support min and max values @reedsa
 export class TextInput extends React.Component<
   TextInputProps & HTMLInputElementProps,
   { isInputFocused: boolean }

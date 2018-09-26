@@ -25,8 +25,8 @@ export class TextArea extends Component {
             return '25px';
         }
         // This is a terrible, yet necessary, idea.
-        this.textarea.style.height = '';
-        return `${Math.min(this.textarea.scrollHeight, maxHeight)}px`;
+        this.textarea.current.style.height = '';
+        return `${Math.min(this.textarea.current.scrollHeight, maxHeight)}px`;
     }
     render() {
         const _a = this.props, { children, disabled, error, id, info, label, onChange: handleChange, required, scrollable, value, tooltip, tooltipDirection } = _a, attributes = __rest(_a, ["children", "disabled", "error", "id", "info", "label", "onChange", "required", "scrollable", "value", "tooltip", "tooltipDirection"]);
@@ -47,7 +47,7 @@ export class TextArea extends Component {
                 'is-scrollable': scrollable,
             }) },
             React.createElement("label", { className: cn('textarea-label', Styles['textarea-label']), htmlFor: id }, label),
-            React.createElement("textarea", Object.assign({ id: id, value: value, onChange: handleChange, onFocus: this.setFocused, onBlur: this.setBlurred, disabled: disabled, style: { height: this.height }, ref: textarea => (this.textarea = textarea) }, attributes)),
+            React.createElement("textarea", Object.assign({ id: id, value: value, onChange: handleChange, onFocus: this.setFocused, onBlur: this.setBlurred, disabled: disabled, style: { height: this.height }, ref: this.textarea }, attributes)),
             info && (React.createElement("span", { className: cn('textarea-info', Styles['textarea-info'], {
                     [Styles['is-error']]: error,
                     'is-error': error,

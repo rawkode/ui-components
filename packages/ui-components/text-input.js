@@ -28,6 +28,7 @@ const getStepSize = (value) => {
 const onInputFocus = function () {
     this.setState({ isInputFocused: true });
 };
+// DEBT: (MCFE-746) Make ui-component text inputs support min and max values @reedsa
 export class TextInput extends React.Component {
     constructor(props) {
         super(props);

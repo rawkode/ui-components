@@ -28,6 +28,7 @@ export interface EmailCardProps {
     onSaveAlertClick?: (event: any) => void;
     paused?: boolean;
     renderSendTimeLink?: (value: string) => any;
+    renderSendTimeAlert?: () => any;
     renderActions?: () => React.ReactElement<ActionsProps>;
     renderAlert?: () => any;
     sendTimeValue?: string;

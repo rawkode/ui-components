@@ -1,2 +1,2 @@
-declare type IconSizeType = 20 | 30 | 40 | 60;
+declare type IconSizeType = 20 | 24 | 30 | 40 | 60;
 export default IconSizeType;

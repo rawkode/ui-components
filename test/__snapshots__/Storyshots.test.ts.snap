@@ -4390,6 +4390,7 @@ exports[`Storyshots EmailCard Email Card - Disable Inbox Details 1`] = `
     >
       Select Send Time
     </a>
+    
   </div>
   <div
     className="email-card-stats"
@@ -4558,6 +4559,7 @@ exports[`Storyshots EmailCard Email Card - Edit Mode 1`] = `
     >
       Select Send Time
     </a>
+    
   </div>
   <div
     className="email-card"
@@ -4652,6 +4654,7 @@ exports[`Storyshots EmailCard Email Card - Live 1`] = `
     >
       Send Instantly
     </a>
+    
   </div>
   <div
     className="email-card-stats"
@@ -4821,6 +4824,7 @@ exports[`Storyshots EmailCard Email Card - Multi Editable 1`] = `
       >
         Select Send Time
       </a>
+      
     </div>
     <div
       className="email-card-stats"
@@ -4986,6 +4990,7 @@ exports[`Storyshots EmailCard Email Card - Multi Editable 1`] = `
       >
         Select Send Time
       </a>
+      
     </div>
     <div
       className="email-card-stats"
@@ -5151,6 +5156,7 @@ exports[`Storyshots EmailCard Email Card - Multi Editable 1`] = `
       >
         Select Send Time
       </a>
+      
     </div>
     <div
       className="email-card-stats"
@@ -5316,6 +5322,7 @@ exports[`Storyshots EmailCard Email Card - Multi Editable 1`] = `
       >
         Select Send Time
       </a>
+      
     </div>
     <div
       className="email-card-stats"
@@ -5499,6 +5506,7 @@ exports[`Storyshots EmailCard Email Card - Multi Live 1`] = `
       >
         Send Instantly
       </a>
+      
     </div>
     <div
       className="email-card-stats"
@@ -5664,6 +5672,7 @@ exports[`Storyshots EmailCard Email Card - Multi Live 1`] = `
       >
         Send 3 Days After Email 1
       </a>
+      
     </div>
     <div
       className="email-card-stats"
@@ -5829,6 +5838,7 @@ exports[`Storyshots EmailCard Email Card - Multi Live 1`] = `
       >
         Send 3 Days After Email 2
       </a>
+      
     </div>
     <div
       className="email-card-stats"
@@ -5994,6 +6004,7 @@ exports[`Storyshots EmailCard Email Card - Multi Live 1`] = `
       >
         Send 3 Days After Email 3
       </a>
+      
     </div>
     <div
       className="email-card-stats"
@@ -6163,6 +6174,7 @@ exports[`Storyshots EmailCard Email Card - Paused 1`] = `
     >
       Send Instantly
     </a>
+    
   </div>
   <div
     className="email-card-stats"
@@ -6331,6 +6343,7 @@ exports[`Storyshots EmailCard Email Card 1`] = `
     >
       Send Instantly
     </a>
+    
   </div>
   <div
     className="email-card-stats"
@@ -6499,30 +6512,7 @@ exports[`Storyshots EmailCard Email Card with Alerts  1`] = `
     >
       Send Instantly
     </a>
-    <div
-      className="alert alert-warning"
-      role="alert"
-    >
-      <p>
-        <i
-          className="sg-icon sg-icon-info-circle"
-          onClick={undefined}
-          style={null}
-        />
-        <p>
-          Changes you've made to this email have not been applied to your live automation.
-          <button
-            className="btn btn-primary btn-small"
-            disabled={false}
-            id={undefined}
-            onClick={[Function]}
-            type="button"
-          >
-            Save and Apply
-          </button>
-        </p>
-      </p>
-    </div>
+    
   </div>
   <div
     className="email-card-stats"
@@ -6683,18 +6673,27 @@ exports[`Storyshots EmailCard Email Card with Alerts  1`] = `
         onClick={undefined}
         style={null}
       />
-      <p>
-        Changes you've made to this email have not been applied to your live automation.
-        <button
-          className="btn btn-primary btn-small"
-          disabled={false}
-          id={undefined}
+      Changes you've made to this email have not been applied to your live automation.
+      <button
+        className="btn btn-primary btn-small"
+        disabled={false}
+        id={undefined}
+        onClick={[Function]}
+        type="button"
+      >
+        Save and Apply
+      </button>
+      <span
+        className="discard-icon"
+        data-tooltip="Discard Changes"
+        data-tooltip-pos="up"
+      >
+        <i
+          className="sg-icon sg-icon-trash"
           onClick={[Function]}
-          type="button"
-        >
-          Save and Apply
-        </button>
-      </p>
+          style={null}
+        />
+      </span>
     </p>
   </div>
 </div>
@@ -6715,6 +6714,7 @@ exports[`Storyshots EmailCard Email Card with Blank Statistics 1`] = `
     >
       Send Instantly
     </a>
+    
   </div>
   <div
     className="email-card-stats"
@@ -6883,6 +6883,7 @@ exports[`Storyshots EmailCard Email Card with Content 1`] = `
     >
       Send Instantly
     </a>
+    
   </div>
   <div
     className="email-card-stats"
@@ -7060,6 +7061,7 @@ exports[`Storyshots EmailCard Email Card with No Statistics 1`] = `
     >
       Send Instantly
     </a>
+    
   </div>
   <div
     className="email-card"
@@ -7154,6 +7156,7 @@ exports[`Storyshots EmailCard Email card with actions 1`] = `
     >
       Send Instantly
     </a>
+    
   </div>
   <div
     className="email-card-stats"
