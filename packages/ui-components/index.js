@@ -22,6 +22,7 @@ export { FilterableList } from './filterable-list';
 export { Footer as SmallFooter } from './small-footer';
 export { Icon } from './icon';
 export { ImageLibrary } from './image-library';
+export { Label } from './label';
 export { Loader } from './loader';
 export { FragmentLoader } from './fragment-loader';
 export { Meter } from './meter';

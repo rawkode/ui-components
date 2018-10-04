@@ -15,7 +15,6 @@ export interface DropdownButtonProps {
 
 export interface DropdownButtonState {
   active: boolean;
-  menuOffset: number;
 }
 
 const { map } = React.Children;
@@ -26,11 +25,8 @@ export class DropdownButton extends React.Component<
 > {
   public static defaultProps = Button.defaultProps;
 
-  public dropdownElement: HTMLDivElement;
-
   public state = {
     active: false,
-    menuOffset: 0,
   };
 
   public componentWillUnmount() {
@@ -59,13 +55,7 @@ export class DropdownButton extends React.Component<
     const hasBadge: boolean = !!badge || badge === 0;
     const hasIcon: boolean = !!icon;
 
-    let buttonType: ButtonType = type;
-    if (gear) {
-      buttonType = 'secondary';
-    }
-    if (gear && icon) {
-      buttonType = 'group-item';
-    }
+    const buttonType: ButtonType = type;
 
     const links = map(children, (link: React.ReactElement<any>) => {
       // allow false or null children
@@ -92,9 +82,9 @@ export class DropdownButton extends React.Component<
             'btn-dropdown',
             'dropdown',
             Styles.dropdown,
-            `btn-${buttonType}`,
-            btnStyles[`btn-${buttonType}`],
             {
+              [`btn-${buttonType}`]: !gear,
+              [btnStyles[`btn-${buttonType}`]]: !gear,
               [btnStyles['btn-dropdown-gear']]: gear && !icon,
               'btn-dropdown-gear': gear && !icon,
               [btnStyles['btn-on-dark']]: onDark,
@@ -118,7 +108,6 @@ export class DropdownButton extends React.Component<
             className
           )}
           onClick={this.toggleDropdown}
-          ref={node => (this.dropdownElement = node)}
           {...attributes}
         >
           {!gear && hasBadge && <Badge>{badge}</Badge>}
@@ -131,10 +120,7 @@ export class DropdownButton extends React.Component<
           ) : (
             label
           )}
-          <ul
-            className={cn('dropdown-menu', Styles['dropdown-menu'])}
-            style={{ transform: `translate(${this.state.menuOffset}px)` }}
-          >
+          <ul className={cn('dropdown-menu', Styles['dropdown-menu'])}>
             {links}
           </ul>
         </div>
@@ -145,18 +131,7 @@ export class DropdownButton extends React.Component<
   private toggleDropdown = (event: React.MouseEvent<HTMLDivElement>) => {
     const { active: isActive } = this.state;
 
-    let menuOffset = 0;
-
-    const minimumDropdownWidth = 180;
-    const windowWidth = window.innerWidth;
-    const buttonWidth = this.dropdownElement.offsetWidth;
-    const bounding = this.dropdownElement.getBoundingClientRect() as DOMRect;
-
-    if (bounding.x + minimumDropdownWidth > windowWidth) {
-      menuOffset = -(minimumDropdownWidth - buttonWidth);
-    }
-
-    return this.setState({ active: !isActive, menuOffset }, () => {
+    return this.setState({ active: !isActive }, () => {
       if (this.state.active) {
         document.addEventListener('click', this.dismissDropdown, false);
       }

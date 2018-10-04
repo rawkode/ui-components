@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import React, { Component, RefObject } from 'react';
+import React, { Component } from 'react';
 import { TooltipDirection } from './tooltip';
 export interface TextAreaProps {
     disabled?: boolean;
@@ -24,9 +24,11 @@ export declare class TextArea extends Component<TextAreaProps & React.InputHTMLA
     };
     state: {
         focused: boolean;
+        height: string;
     };
-    textarea: RefObject<HTMLTextAreaElement>;
-    readonly height: string;
+    textareaMeasurer: HTMLTextAreaElement;
+    componentDidUpdate({value: previousValue}: TextAreaProps): void;
+    calculateHeight: () => string;
     setFocused: () => void;
     setBlurred: () => void;
     render(): JSX.Element;

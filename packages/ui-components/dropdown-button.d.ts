@@ -9,14 +9,11 @@ export interface DropdownButtonProps {
 }
 export interface DropdownButtonState {
     active: boolean;
-    menuOffset: number;
 }
 export declare class DropdownButton extends React.Component<DropdownButtonProps & ButtonProps, DropdownButtonState> {
     static defaultProps: Partial<ButtonProps & React.HTMLAttributes<HTMLButtonElement> & React.InputHTMLAttributes<HTMLButtonElement>>;
-    dropdownElement: HTMLDivElement;
     state: {
         active: boolean;
-        menuOffset: number;
     };
     componentWillUnmount(): void;
     render(): JSX.Element;

@@ -76,9 +76,6 @@ const SelectStyles = {
         };
         return Object.assign({}, base, dropdownIndicator);
     },
-    indicatorSeparator: () => {
-        return {};
-    },
     groupHeading: (base) => {
         const groupStyle = {
             color: SassVars.slate,
@@ -89,6 +86,9 @@ const SelectStyles = {
             textTransform: 'capitalize',
         };
         return Object.assign({}, base, groupStyle);
+    },
+    indicatorSeparator: () => {
+        return {};
     },
     menu: (base) => {
         const menu = Object.assign({}, dropDownShadow, { backgroundColor: SassVars['slate-02'], borderColor: SassVars['slate-10'], borderRadius: 2, fontSize: 13, margin: 0 });
@@ -119,11 +119,28 @@ const SelectStyles = {
             : {};
         return Object.assign({}, base, { padding: '9px 30px' }, focusedState, isSelected, { ':active': {}, 'line-height': '18px' });
     },
+    placeholder: (base) => {
+        return Object.assign({}, base, {
+            marginLeft: 0,
+            marginRight: 0,
+        });
+    },
+    selectContainer: (base) => {
+        return Object.assign({}, base, {
+            marginLeft: 0,
+            marginRight: 0,
+        });
+    },
     singleValue: (base) => {
-        return Object.assign({}, base, inputSelect);
+        return Object.assign({}, base, inputSelect, {
+            marginLeft: 0,
+            marginRight: 0,
+        });
     },
     valueContainer: (base) => {
-        return Object.assign({}, base, inputSelect);
+        return Object.assign({}, base, inputSelect, {
+            padding: 0,
+        });
     },
 };
 const Select = props => {

@@ -13,6 +13,7 @@ import {
   ExportedColorProps,
   InjectedColorProps,
 } from 'react-color/lib/components/common/ColorWrap';
+import { createPortal } from 'react-dom';
 
 import ColorControls from './colorControls';
 import ColorStorage from './colorStorage';
@@ -49,7 +50,7 @@ class ColorPalette extends React.Component<
       onChange: this.onChange,
       rgb: this.props.rgb,
     };
-    return (
+    return createPortal(
       <DismissableBackground onClick={toggleColorPalette}>
         <div
           className={Styles['color-palette']}
@@ -65,7 +66,8 @@ class ColorPalette extends React.Component<
           <ColorControls colorProps={injectedProps} />
           <ColorStorage color={injectedProps.hex} onChange={this.onChange} />
         </div>
-      </DismissableBackground>
+      </DismissableBackground>,
+      document.body
     );
   }
 

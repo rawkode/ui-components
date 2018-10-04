@@ -1,4 +1,4 @@
-import React, { Component, RefObject } from 'react';
+import React, { Component } from 'react';
 import Icon from './icon';
 import Styles from './styles/text-area.module.scss';
 import Tooltip, { TooltipDirection } from './tooltip';
@@ -29,21 +29,32 @@ export class TextArea extends Component<
     scrollable: false,
   };
 
-  public state = { focused: false };
-  public textarea: RefObject<HTMLTextAreaElement>;
+  public state = { focused: false, height: '25px' };
 
-  public get height(): string {
+  // keep around an invisible textarea to measure the scrollheight of the visible textarea.
+  // rapidly changing the height on the original textarea during render cycles
+  // was causing some weirdness.
+  public textareaMeasurer: HTMLTextAreaElement;
+
+  public componentDidUpdate({ value: previousValue }: TextAreaProps) {
+    const { value } = this.props;
+
+    if (previousValue === value) {
+      return;
+    }
+
+    this.setState({ height: this.calculateHeight() });
+  }
+
+  public calculateHeight = (): string => {
     const { maxHeight } = this.props;
 
-    if (!this.textarea) {
+    if (!this.textareaMeasurer) {
       return '25px';
     }
 
-    // This is a terrible, yet necessary, idea.
-    this.textarea.current.style.height = '';
-
-    return `${Math.min(this.textarea.current.scrollHeight, maxHeight)}px`;
-  }
+    return `${Math.min(this.textareaMeasurer.scrollHeight, maxHeight)}px`;
+  };
 
   public setFocused = () => this.setState({ focused: true });
   public setBlurred = () => this.setState({ focused: false });
@@ -65,7 +76,7 @@ export class TextArea extends Component<
       ...attributes
     } = this.props;
 
-    const { focused } = this.state;
+    const { focused, height } = this.state;
     const hasValue = !!value;
 
     return (
@@ -98,9 +109,13 @@ export class TextArea extends Component<
           onFocus={this.setFocused}
           onBlur={this.setBlurred}
           disabled={disabled}
-          style={{ height: this.height }}
-          ref={this.textarea}
+          style={{ height }}
           {...attributes}
+        />
+        <textarea
+          value={value}
+          style={{ height: 0, visibility: 'hidden', border: 0 }}
+          ref={textarea => (this.textareaMeasurer = textarea)}
         />
         {info && (
           <span

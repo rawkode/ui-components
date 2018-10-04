@@ -1,0 +1,80 @@
+@import './global/variables.scss';
+@import './global/mixins';
+
+.label {
+  position: relative;
+  display: inline-block;
+  padding-left: 18px;
+  font-size: 12px;
+  line-height: 20px;
+
+  // label dots
+  &::before {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background-color: $slate-20;
+    border-radius: 50%;
+    content: '';
+  }
+
+  &-sent,
+  &-delivered {
+    @include label($mantis);
+  }
+
+  &-live {
+    @include label($sg-blue);
+  }
+
+  &-success {
+    @include label($grass-stain);
+  }
+
+  &-scheduled {
+    @include label($cobalt);
+  }
+
+  &-pick-winner {
+    @include label($wild-strawberry);
+  }
+
+  &-draft,
+  &-global {
+    @include label($steel);
+  }
+
+  &-list,
+  &-progress {
+    @include label($bluebird);
+  }
+
+  &-segment {
+    @include label($seafoam);
+  }
+
+  &-bounced,
+  &-canceled,
+  &-paused,
+  &-disabled,
+  &-error {
+    @include label($ron-burgundy);
+  }
+
+  &-optimized {
+    @include label($burnt-orange);
+  }
+
+  &-ab-test {
+    display: block;
+    font-size: 11px;
+    line-height: 15px;
+  }
+
+  // remove status dot for a/b test labels
+  &-ab-test::before {
+    content: none;
+  }
+}

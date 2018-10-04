@@ -99,10 +99,6 @@ const SelectStyles = {
 
     return { ...base, ...dropdownIndicator };
   },
-  indicatorSeparator: () => {
-    return {};
-  },
-
   groupHeading: (base: object) => {
     const groupStyle = {
       color: SassVars.slate,
@@ -114,7 +110,9 @@ const SelectStyles = {
     };
     return { ...base, ...groupStyle };
   },
-
+  indicatorSeparator: () => {
+    return {};
+  },
   menu: (base: object) => {
     const menu = {
       ...dropDownShadow,
@@ -127,7 +125,6 @@ const SelectStyles = {
 
     return { ...base, ...menu };
   },
-
   multiValue: (base: object, state: any) => {
     return {
       ...base,
@@ -178,11 +175,42 @@ const SelectStyles = {
       'line-height': '18px',
     };
   },
+  placeholder: (base: object) => {
+    return {
+      ...base,
+      ...{
+        marginLeft: 0,
+        marginRight: 0,
+      },
+    };
+  },
+  selectContainer: (base: object) => {
+    return {
+      ...base,
+      ...{
+        marginLeft: 0,
+        marginRight: 0,
+      },
+    };
+  },
   singleValue: (base: object) => {
-    return { ...base, ...inputSelect };
+    return {
+      ...base,
+      ...inputSelect,
+      ...{
+        marginLeft: 0,
+        marginRight: 0,
+      },
+    };
   },
   valueContainer: (base: object) => {
-    return { ...base, ...inputSelect };
+    return {
+      ...base,
+      ...inputSelect,
+      ...{
+        padding: 0,
+      },
+    };
   },
 };
 const Select: React.SFC<any> = props => {

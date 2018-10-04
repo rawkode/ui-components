@@ -13,4 +13,5 @@ export const isVisible: string;
 export const tiaraOffset: string;
 export const sgIcon: string;
 export const sgIconX: string;
+export const discardIcon: string;
 export const btn: string;

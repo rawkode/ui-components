@@ -20,19 +20,10 @@ export class DropdownButton extends React.Component {
         super(...arguments);
         this.state = {
             active: false,
-            menuOffset: 0,
         };
         this.toggleDropdown = (event) => {
             const { active: isActive } = this.state;
-            let menuOffset = 0;
-            const minimumDropdownWidth = 180;
-            const windowWidth = window.innerWidth;
-            const buttonWidth = this.dropdownElement.offsetWidth;
-            const bounding = this.dropdownElement.getBoundingClientRect();
-            if (bounding.x + minimumDropdownWidth > windowWidth) {
-                menuOffset = -(minimumDropdownWidth - buttonWidth);
-            }
-            return this.setState({ active: !isActive, menuOffset }, () => {
+            return this.setState({ active: !isActive }, () => {
                 if (this.state.active) {
                     document.addEventListener('click', this.dismissDropdown, false);
                 }
@@ -51,13 +42,7 @@ export class DropdownButton extends React.Component {
         const isActive = this.state.active;
         const hasBadge = !!badge || badge === 0;
         const hasIcon = !!icon;
-        let buttonType = type;
-        if (gear) {
-            buttonType = 'secondary';
-        }
-        if (gear && icon) {
-            buttonType = 'group-item';
-        }
+        const buttonType = type;
         const links = map(children, (link) => {
             // allow false or null children
             if (!link) {
@@ -68,7 +53,9 @@ export class DropdownButton extends React.Component {
             });
         });
         return (React.createElement("div", { className: cn('btn-list', btnStyles['btn-list']) },
-            React.createElement("div", Object.assign({ className: cn('btn', btnStyles.btn, btnStyles['btn-dropdown'], 'btn-dropdown', 'dropdown', Styles.dropdown, `btn-${buttonType}`, btnStyles[`btn-${buttonType}`], {
+            React.createElement("div", Object.assign({ className: cn('btn', btnStyles.btn, btnStyles['btn-dropdown'], 'btn-dropdown', 'dropdown', Styles.dropdown, {
+                    [`btn-${buttonType}`]: !gear,
+                    [btnStyles[`btn-${buttonType}`]]: !gear,
                     [btnStyles['btn-dropdown-gear']]: gear && !icon,
                     'btn-dropdown-gear': gear && !icon,
                     [btnStyles['btn-on-dark']]: onDark,
@@ -88,11 +75,11 @@ export class DropdownButton extends React.Component {
                     'is-disabled': disabled,
                     [btnStyles['is-loading']]: loading,
                     'is-loading': loading,
-                }, className), onClick: this.toggleDropdown, ref: node => (this.dropdownElement = node) }, attributes),
+                }, className), onClick: this.toggleDropdown }, attributes),
                 !gear && hasBadge && React.createElement(Badge, null, badge),
                 !gear && hasIcon && React.createElement(Icon, { type: icon, onDark: type === 'primary' }),
                 gear ? (React.createElement(Icon, { className: cn('sg-icon', btnStyles['sg-icon']), type: icon || 'gear' })) : (label),
-                React.createElement("ul", { className: cn('dropdown-menu', Styles['dropdown-menu']), style: { transform: `translate(${this.state.menuOffset}px)` } }, links))));
+                React.createElement("ul", { className: cn('dropdown-menu', Styles['dropdown-menu']) }, links))));
     }
 }
 DropdownButton.defaultProps = Button.defaultProps;

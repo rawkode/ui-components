@@ -772,7 +772,7 @@ exports[`Storyshots Alerts Alert which is not dismissable 1`] = `
     />
     Changes you've made to this email have not been applied to your live automation.
     <button
-      className="btn btn-primary"
+      className="btn btn-primary btn-small"
       disabled={false}
       id={undefined}
       onClick={[Function]}
@@ -2023,7 +2023,7 @@ exports[`Storyshots Card Card w/Actions (Vertical) 1`] = `
           className="btn-list"
         >
           <div
-            className="btn btn-dropdown dropdown btn-group-item has-icon"
+            className="btn btn-dropdown dropdown has-icon"
             onClick={[Function]}
           >
             <i
@@ -2033,11 +2033,6 @@ exports[`Storyshots Card Card w/Actions (Vertical) 1`] = `
             />
             <ul
               className="dropdown-menu"
-              style={
-                Object {
-                  "transform": "translate(0px)",
-                }
-              }
             >
               <span
                 className="dropdown-link"
@@ -2372,7 +2367,7 @@ exports[`Storyshots Card Card with falsy actions and link actions 1`] = `
           className="btn-list"
         >
           <div
-            className="btn btn-dropdown dropdown btn-group-item has-icon"
+            className="btn btn-dropdown dropdown has-icon"
             onClick={[Function]}
           >
             <i
@@ -2382,11 +2377,6 @@ exports[`Storyshots Card Card with falsy actions and link actions 1`] = `
             />
             <ul
               className="dropdown-menu"
-              style={
-                Object {
-                  "transform": "translate(0px)",
-                }
-              }
             >
               <a
                 className="dropdown-link"
@@ -3461,7 +3451,7 @@ exports[`Storyshots Dropdown Button Gear Dropdown 1`] = `
   className="btn-list"
 >
   <div
-    className="btn btn-dropdown dropdown btn-secondary btn-dropdown-gear"
+    className="btn btn-dropdown dropdown btn-dropdown-gear"
     onClick={[Function]}
   >
     <i
@@ -3471,11 +3461,6 @@ exports[`Storyshots Dropdown Button Gear Dropdown 1`] = `
     />
     <ul
       className="dropdown-menu"
-      style={
-        Object {
-          "transform": "translate(0px)",
-        }
-      }
     >
       <a
         className="dropdown-link"
@@ -3511,11 +3496,6 @@ exports[`Storyshots Dropdown Button Primary Dropdown (Small) 1`] = `
     Button
     <ul
       className="dropdown-menu"
-      style={
-        Object {
-          "transform": "translate(0px)",
-        }
-      }
     >
       <a
         className="dropdown-link"
@@ -3551,11 +3531,6 @@ exports[`Storyshots Dropdown Button Primary Dropdown 1`] = `
     Button
     <ul
       className="dropdown-menu"
-      style={
-        Object {
-          "transform": "translate(0px)",
-        }
-      }
     >
       <a
         className="dropdown-link"
@@ -3596,11 +3571,6 @@ exports[`Storyshots Dropdown Button Primary Dropdown with Badge (Small) 1`] = `
     Button
     <ul
       className="dropdown-menu"
-      style={
-        Object {
-          "transform": "translate(0px)",
-        }
-      }
     >
       <a
         className="dropdown-link"
@@ -3641,11 +3611,6 @@ exports[`Storyshots Dropdown Button Primary Dropdown with Badge 1`] = `
     Button
     <ul
       className="dropdown-menu"
-      style={
-        Object {
-          "transform": "translate(0px)",
-        }
-      }
     >
       <a
         className="dropdown-link"
@@ -3690,11 +3655,6 @@ exports[`Storyshots Dropdown Button Primary Dropdown with Icon (Small) 1`] = `
     Button
     <ul
       className="dropdown-menu"
-      style={
-        Object {
-          "transform": "translate(0px)",
-        }
-      }
     >
       <a
         className="dropdown-link"
@@ -3739,11 +3699,6 @@ exports[`Storyshots Dropdown Button Primary Dropdown with Icon 1`] = `
     Button
     <ul
       className="dropdown-menu"
-      style={
-        Object {
-          "transform": "translate(0px)",
-        }
-      }
     >
       <a
         className="dropdown-link"
@@ -3779,11 +3734,6 @@ exports[`Storyshots Dropdown Button Secondary Dropdown (Small) 1`] = `
     Button
     <ul
       className="dropdown-menu"
-      style={
-        Object {
-          "transform": "translate(0px)",
-        }
-      }
     >
       <a
         className="dropdown-link"
@@ -3819,11 +3769,6 @@ exports[`Storyshots Dropdown Button Secondary Dropdown 1`] = `
     Button
     <ul
       className="dropdown-menu"
-      style={
-        Object {
-          "transform": "translate(0px)",
-        }
-      }
     >
       <a
         className="dropdown-link"
@@ -3864,11 +3809,6 @@ exports[`Storyshots Dropdown Button Secondary Dropdown with Badge (Small) 1`] = 
     Button
     <ul
       className="dropdown-menu"
-      style={
-        Object {
-          "transform": "translate(0px)",
-        }
-      }
     >
       <a
         className="dropdown-link"
@@ -3909,11 +3849,6 @@ exports[`Storyshots Dropdown Button Secondary Dropdown with Badge 1`] = `
     Button
     <ul
       className="dropdown-menu"
-      style={
-        Object {
-          "transform": "translate(0px)",
-        }
-      }
     >
       <a
         className="dropdown-link"
@@ -3954,11 +3889,6 @@ exports[`Storyshots Dropdown Button Secondary Dropdown with Icon (Small) 1`] = `
     Button
     <ul
       className="dropdown-menu"
-      style={
-        Object {
-          "transform": "translate(0px)",
-        }
-      }
     >
       <a
         className="dropdown-link"
@@ -3999,11 +3929,6 @@ exports[`Storyshots Dropdown Button Secondary Dropdown with Icon 1`] = `
     Button
     <ul
       className="dropdown-menu"
-      style={
-        Object {
-          "transform": "translate(0px)",
-        }
-      }
     >
       <a
         className="dropdown-link"
@@ -9031,6 +8956,107 @@ exports[`Storyshots Image Library without upload alert, with images 1`] = `
 </div>
 `;
 
+exports[`Storyshots Label Labels 1`] = `
+Array [
+  <span
+    className="label label-sent"
+  >
+    Sent
+  </span>,
+  <br />,
+  <span
+    className="label label-delivered"
+  >
+    Delivered
+  </span>,
+  <br />,
+  <span
+    className="label label-live"
+  >
+    Live
+  </span>,
+  <br />,
+  <span
+    className="label label-success"
+  >
+    Success
+  </span>,
+  <br />,
+  <span
+    className="label label-scheduled"
+  >
+    Scheduled
+  </span>,
+  <br />,
+  <span
+    className="label label-pick-winner"
+  >
+    Pick Winner
+  </span>,
+  <br />,
+  <span
+    className="label label-draft"
+  >
+    Draft
+  </span>,
+  <br />,
+  <span
+    className="label label-global"
+  >
+    Global
+  </span>,
+  <br />,
+  <span
+    className="label label-list"
+  >
+    List
+  </span>,
+  <br />,
+  <span
+    className="label label-progress"
+  >
+    Progress
+  </span>,
+  <br />,
+  <span
+    className="label label-bounced"
+  >
+    Bounced
+  </span>,
+  <br />,
+  <span
+    className="label label-canceled"
+  >
+    Canceled
+  </span>,
+  <br />,
+  <span
+    className="label label-disabled"
+  >
+    Disabled
+  </span>,
+  <br />,
+  <span
+    className="label label-paused"
+  >
+    Paused
+  </span>,
+  <br />,
+  <span
+    className="label label-error"
+  >
+    Error
+  </span>,
+  <br />,
+  <span
+    className="label label-optimized"
+  >
+    Optimized
+  </span>,
+  <br />,
+]
+`;
+
 exports[`Storyshots Loaders Centered Loader 1`] = `
 <div
   style={
@@ -10272,10 +10298,10 @@ exports[`Storyshots Segment Term Segment term which is being edited 1`] = `
             onTouchEnd={[Function]}
           >
             <div
-              className="css-elp12a"
+              className="css-vkq1bj"
             >
               <div
-                className="css-1492t68"
+                className="css-pka8w3"
               >
                 Select...
               </div>
@@ -10408,10 +10434,10 @@ exports[`Storyshots Segment Term Segment term which is being edited 1`] = `
             onTouchEnd={[Function]}
           >
             <div
-              className="css-elp12a"
+              className="css-vkq1bj"
             >
               <div
-                className="css-1492t68"
+                className="css-pka8w3"
               >
                 Select...
               </div>
@@ -10595,10 +10621,10 @@ exports[`Storyshots Segment Term Segment term which is being edited and is fille
             onTouchEnd={[Function]}
           >
             <div
-              className="css-elp12a"
+              className="css-vkq1bj"
             >
               <div
-                className="css-zsx35i"
+                className="css-1v8euj5"
               >
                 the first time a contact
               </div>
@@ -10731,10 +10757,10 @@ exports[`Storyshots Segment Term Segment term which is being edited and is fille
             onTouchEnd={[Function]}
           >
             <div
-              className="css-elp12a"
+              className="css-vkq1bj"
             >
               <div
-                className="css-1492t68"
+                className="css-pka8w3"
               >
                 Select...
               </div>
@@ -10861,10 +10887,10 @@ exports[`Storyshots Segment Term Segment term which is being edited and is fille
             onTouchEnd={[Function]}
           >
             <div
-              className="css-elp12a"
+              className="css-vkq1bj"
             >
               <div
-                className="css-1492t68"
+                className="css-pka8w3"
               >
                 Select...
               </div>
@@ -11248,10 +11274,10 @@ exports[`Storyshots Segment Term Segment terms 1`] = `
                 onTouchEnd={[Function]}
               >
                 <div
-                  className="css-elp12a"
+                  className="css-vkq1bj"
                 >
                   <div
-                    className="css-zsx35i"
+                    className="css-1v8euj5"
                   >
                     The first time a contact
                   </div>
@@ -11384,10 +11410,10 @@ exports[`Storyshots Segment Term Segment terms 1`] = `
                 onTouchEnd={[Function]}
               >
                 <div
-                  className="css-elp12a"
+                  className="css-vkq1bj"
                 >
                   <div
-                    className="css-zsx35i"
+                    className="css-1v8euj5"
                   >
                     Abandons a cart
                   </div>
@@ -11699,10 +11725,10 @@ exports[`Storyshots Select Disabled 1`] = `
         onTouchEnd={[Function]}
       >
         <div
-          className="css-elp12a"
+          className="css-vkq1bj"
         >
           <div
-            className="css-zsx35i"
+            className="css-1v8euj5"
           >
             Extraordinary
           </div>
@@ -11832,10 +11858,10 @@ exports[`Storyshots Select Multi select - no values 1`] = `
         onTouchEnd={[Function]}
       >
         <div
-          className="css-elp12a"
+          className="css-vkq1bj"
         >
           <div
-            className="css-1492t68"
+            className="css-pka8w3"
           >
             Select...
           </div>
@@ -11965,7 +11991,7 @@ exports[`Storyshots Select Multi select - open 1`] = `
         onTouchEnd={[Function]}
       >
         <div
-          className="css-elp12a"
+          className="css-vkq1bj"
         >
           <div
             className="css-113lvzv"
@@ -12241,7 +12267,7 @@ exports[`Storyshots Select Multi select 1`] = `
         onTouchEnd={[Function]}
       >
         <div
-          className="css-elp12a"
+          className="css-vkq1bj"
         >
           <div
             className="css-113lvzv"
@@ -12442,10 +12468,10 @@ exports[`Storyshots Select Option groups - open 1`] = `
         onTouchEnd={[Function]}
       >
         <div
-          className="css-elp12a"
+          className="css-vkq1bj"
         >
           <div
-            className="css-1492t68"
+            className="css-pka8w3"
           >
             Feels vs. Powerups
           </div>
@@ -12805,10 +12831,10 @@ exports[`Storyshots Select Option groups 1`] = `
         onTouchEnd={[Function]}
       >
         <div
-          className="css-elp12a"
+          className="css-vkq1bj"
         >
           <div
-            className="css-1492t68"
+            className="css-pka8w3"
           >
             Feels vs. Powerups
           </div>
@@ -12943,10 +12969,10 @@ exports[`Storyshots Select Searchable 1`] = `
         onTouchEnd={[Function]}
       >
         <div
-          className="css-elp12a"
+          className="css-vkq1bj"
         >
           <div
-            className="css-zsx35i"
+            className="css-1v8euj5"
           >
             Good
           </div>
@@ -13076,10 +13102,10 @@ exports[`Storyshots Select Standard 1`] = `
         onTouchEnd={[Function]}
       >
         <div
-          className="css-elp12a"
+          className="css-vkq1bj"
         >
           <div
-            className="css-zsx35i"
+            className="css-1v8euj5"
           >
             Good
           </div>
@@ -13214,10 +13240,10 @@ exports[`Storyshots Select Standard open 1`] = `
         onTouchEnd={[Function]}
       >
         <div
-          className="css-elp12a"
+          className="css-vkq1bj"
         >
           <div
-            className="css-1492t68"
+            className="css-pka8w3"
           >
             Goobers
           </div>
@@ -13458,7 +13484,7 @@ exports[`Storyshots Select Tagging - open 1`] = `
         onTouchEnd={[Function]}
       >
         <div
-          className="css-elp12a"
+          className="css-vkq1bj"
         >
           <div
             className="css-113lvzv"
@@ -13761,7 +13787,7 @@ exports[`Storyshots Select Tagging 1`] = `
         onTouchEnd={[Function]}
       >
         <div
-          className="css-elp12a"
+          className="css-vkq1bj"
         >
           <div
             className="css-113lvzv"
@@ -13989,10 +14015,10 @@ exports[`Storyshots Select With placeholder 1`] = `
         onTouchEnd={[Function]}
       >
         <div
-          className="css-elp12a"
+          className="css-vkq1bj"
         >
           <div
-            className="css-1492t68"
+            className="css-pka8w3"
           >
             Goobers
           </div>
@@ -14124,10 +14150,10 @@ exports[`Storyshots Select/Label + Info disabled + error 1`] = `
       onTouchEnd={[Function]}
     >
       <div
-        className="css-elp12a"
+        className="css-vkq1bj"
       >
         <div
-          className="css-1492t68"
+          className="css-pka8w3"
         >
           Select...
         </div>
@@ -14263,7 +14289,7 @@ exports[`Storyshots Select/Label + Info disabled - defaultValue - multi select 1
       onTouchEnd={[Function]}
     >
       <div
-        className="css-elp12a"
+        className="css-vkq1bj"
       >
         <div
           className="css-1wvqrm2"
@@ -14424,10 +14450,10 @@ exports[`Storyshots Select/Label + Info disabled - defaultValue 1`] = `
       onTouchEnd={[Function]}
     >
       <div
-        className="css-elp12a"
+        className="css-vkq1bj"
       >
         <div
-          className="css-zsx35i"
+          className="css-1v8euj5"
         >
           Mushroom
         </div>
@@ -14563,10 +14589,10 @@ exports[`Storyshots Select/Label + Info disabled 1`] = `
       onTouchEnd={[Function]}
     >
       <div
-        className="css-elp12a"
+        className="css-vkq1bj"
       >
         <div
-          className="css-1492t68"
+          className="css-pka8w3"
         >
           Select...
         </div>
@@ -14702,10 +14728,10 @@ exports[`Storyshots Select/Label + Info error 1`] = `
       onTouchEnd={[Function]}
     >
       <div
-        className="css-elp12a"
+        className="css-vkq1bj"
       >
         <div
-          className="css-1492t68"
+          className="css-pka8w3"
         >
           Select...
         </div>
@@ -14836,10 +14862,10 @@ exports[`Storyshots Select/Label + Info info 1`] = `
       onTouchEnd={[Function]}
     >
       <div
-        className="css-elp12a"
+        className="css-vkq1bj"
       >
         <div
-          className="css-1492t68"
+          className="css-pka8w3"
         >
           Select...
         </div>
@@ -14975,10 +15001,10 @@ exports[`Storyshots Select/Label + Info label - required 1`] = `
       onTouchEnd={[Function]}
     >
       <div
-        className="css-elp12a"
+        className="css-vkq1bj"
       >
         <div
-          className="css-1492t68"
+          className="css-pka8w3"
         >
           Select...
         </div>
@@ -15114,10 +15140,10 @@ exports[`Storyshots Select/Label + Info label 1`] = `
       onTouchEnd={[Function]}
     >
       <div
-        className="css-elp12a"
+        className="css-vkq1bj"
       >
         <div
-          className="css-1492t68"
+          className="css-pka8w3"
         >
           Select...
         </div>
@@ -16734,6 +16760,16 @@ exports[`Storyshots Text Area Basic 1`] = `
     }
     value=""
   />
+  <textarea
+    style={
+      Object {
+        "border": 0,
+        "height": 0,
+        "visibility": "hidden",
+      }
+    }
+    value=""
+  />
 </div>
 `;
 
@@ -16757,6 +16793,16 @@ exports[`Storyshots Text Area Disabled 1`] = `
     style={
       Object {
         "height": "25px",
+      }
+    }
+    value=""
+  />
+  <textarea
+    style={
+      Object {
+        "border": 0,
+        "height": 0,
+        "visibility": "hidden",
       }
     }
     value=""
@@ -16788,6 +16834,16 @@ exports[`Storyshots Text Area Error 1`] = `
     }
     value=""
   />
+  <textarea
+    style={
+      Object {
+        "border": 0,
+        "height": 0,
+        "visibility": "hidden",
+      }
+    }
+    value=""
+  />
 </div>
 `;
 
@@ -16811,6 +16867,16 @@ exports[`Storyshots Text Area Information Message 1`] = `
     style={
       Object {
         "height": "25px",
+      }
+    }
+    value=""
+  />
+  <textarea
+    style={
+      Object {
+        "border": 0,
+        "height": 0,
+        "visibility": "hidden",
       }
     }
     value=""
@@ -16848,6 +16914,16 @@ exports[`Storyshots Text Area Required 1`] = `
     }
     value=""
   />
+  <textarea
+    style={
+      Object {
+        "border": 0,
+        "height": 0,
+        "visibility": "hidden",
+      }
+    }
+    value=""
+  />
 </div>
 `;
 
@@ -16875,6 +16951,16 @@ exports[`Storyshots Text Area Scrollable 1`] = `
     }
     value=""
   />
+  <textarea
+    style={
+      Object {
+        "border": 0,
+        "height": 0,
+        "visibility": "hidden",
+      }
+    }
+    value=""
+  />
 </div>
 `;
 
@@ -16898,6 +16984,16 @@ exports[`Storyshots Text Area With Tooltip [skip] 1`] = `
     style={
       Object {
         "height": "25px",
+      }
+    }
+    value=""
+  />
+  <textarea
+    style={
+      Object {
+        "border": 0,
+        "height": 0,
+        "visibility": "hidden",
       }
     }
     value=""
@@ -19305,7 +19401,7 @@ exports[`Storyshots Unsubscribe Groups Unsubscribe Group Card (isDisplayedOnPref
           className="btn-list"
         >
           <div
-            className="btn btn-dropdown dropdown btn-group-item has-icon"
+            className="btn btn-dropdown dropdown has-icon"
             onClick={[Function]}
           >
             <i
@@ -19315,11 +19411,6 @@ exports[`Storyshots Unsubscribe Groups Unsubscribe Group Card (isDisplayedOnPref
             />
             <ul
               className="dropdown-menu"
-              style={
-                Object {
-                  "transform": "translate(0px)",
-                }
-              }
             >
               <span
                 className="dropdown-link"
@@ -19432,7 +19523,7 @@ exports[`Storyshots Unsubscribe Groups Unsubscribe Group Card 1`] = `
           className="btn-list"
         >
           <div
-            className="btn btn-dropdown dropdown btn-group-item has-icon"
+            className="btn btn-dropdown dropdown has-icon"
             onClick={[Function]}
           >
             <i
@@ -19442,11 +19533,6 @@ exports[`Storyshots Unsubscribe Groups Unsubscribe Group Card 1`] = `
             />
             <ul
               className="dropdown-menu"
-              style={
-                Object {
-                  "transform": "translate(0px)",
-                }
-              }
             >
               <span
                 className="dropdown-link"

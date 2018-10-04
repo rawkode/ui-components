@@ -2,6 +2,7 @@ import debounce from 'lodash/debounce';
 import React from 'react';
 import { CustomPicker, } from 'react-color';
 import { Saturation } from 'react-color/lib/components/common';
+import { createPortal } from 'react-dom';
 import ColorControls from './colorControls';
 import ColorStorage from './colorStorage';
 import DismissableBackground from './dismissableBackground';
@@ -29,7 +30,7 @@ class ColorPalette extends React.Component {
             onChange: this.onChange,
             rgb: this.props.rgb,
         };
-        return (React.createElement(DismissableBackground, { onClick: toggleColorPalette },
+        return createPortal(React.createElement(DismissableBackground, { onClick: toggleColorPalette },
             React.createElement("div", { className: Styles['color-palette'], style: { top, left }, ref: p => {
                     this.palette = p;
                 } },
@@ -37,7 +38,7 @@ class ColorPalette extends React.Component {
                     React.createElement(Saturation, Object.assign({}, this.props, { onChange: this.onChange }))),
                 React.createElement(HueSlider, Object.assign({}, injectedProps)),
                 React.createElement(ColorControls, { colorProps: injectedProps }),
-                React.createElement(ColorStorage, { color: injectedProps.hex, onChange: this.onChange }))));
+                React.createElement(ColorStorage, { color: injectedProps.hex, onChange: this.onChange }))), document.body);
     }
 }
 export default CustomPicker(ColorPalette);
