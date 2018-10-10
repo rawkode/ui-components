@@ -15,7 +15,7 @@ FROM node:8.11.3-jessie
 #     libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 \
 #     libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 \
 #     ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget \
-#     --no-install-recommends \ 
+#     --no-install-recommends \
 #     && rm -rf /var/lib/apt/lists/* \
 #     && apt-get purge --auto-remove -y curl \
 #     && rm -rf /src/*.deb
@@ -31,10 +31,6 @@ RUN apt-get update && apt-get install -y wget --no-install-recommends \
     && apt-get purge --auto-remove -y curl \
     && rm -rf /src/*.deb
 
-# It's a good idea to use dumb-init to help prevent zombie chrome processes.
-ADD https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64 /usr/local/bin/dumb-init
-RUN chmod +x /usr/local/bin/dumb-init
-
 # Uncomment to skip the chromium download when installing puppeteer. If you do,
 # you'll need to launch puppeteer with:
 #     browser.launch({executablePath: 'google-chrome-unstable'})
@@ -49,11 +45,8 @@ RUN groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
     && chown -R pptruser:pptruser /home/pptruser \
     && chown -R pptruser:pptruser /node_modules
 
-ENTRYPOINT ["dumb-init", "--"]
-
 # Run everything after as non-privileged user.
 # USER pptruser
-
 
 RUN mkdir -p /opt/sendgrid/ui-components/
 
@@ -67,4 +60,5 @@ RUN yarn install
 ADD ./ /opt/sendgrid/ui-components/
 
 EXPOSE 6006:6006
-CMD ["yarn", "storybook"]
+ENTRYPOINT ["yarn"]
+CMD ["storybook"]
