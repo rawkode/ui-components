@@ -116,6 +116,8 @@ export class SegmentTerm extends PureComponent<SegmentTermProps> {
             'has-separator': hasSeparator,
             [Styles['is-editable']]: editing,
             'is-editable': editing,
+            [Styles['is-live']]: !editable,
+            'is-live': !editable,
           })}
           onClick={editable && !editing ? onEdit : undefined}
         >

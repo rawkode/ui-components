@@ -186,3 +186,15 @@ stories.add('Stateless Text Input with No Value Passed In', () => (
     onBlur={action('onBlur Called')}
   />
 ));
+
+stories.add('Stateless Text Input with a Component Passed as Info prop', () => (
+  <TextInput
+    type="text"
+    label="Stateless Input"
+    name="simple"
+    id="test-input-simple"
+    info={<a href="#">Test Info Link</a>}
+    onChange={action('Input Changed')}
+    onBlur={action('onBlur Called')}
+  />
+));

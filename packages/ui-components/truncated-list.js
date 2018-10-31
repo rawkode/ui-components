@@ -7,10 +7,12 @@ var __rest = (this && this.__rest) || function (s, e) {
             t[p[i]] = s[p[i]];
     return t;
 };
-import React from 'react';
+import React, { Fragment } from 'react';
 export const TruncatedList = (_a) => {
     var { items, limit = 3, className, link, renderItems, renderMore } = _a, attributes = __rest(_a, ["items", "limit", "className", "link", "renderItems", "renderMore"]);
     const shown = items.slice(0, limit);
+    const abbreviationTitle = items.slice(limit);
+    const abbreviatedText = abbreviationTitle.join(', ');
     const shownText = shown.join(', ');
     const truncated = items.slice(limit);
     const numberOfAdditionalItems = truncated.length;
@@ -18,8 +20,12 @@ export const TruncatedList = (_a) => {
     const additionalItemText = (React.createElement("span", null,
         ",",
         ' ',
-        React.createElement("abbr", null,
-            React.createElement("a", { href: link },
+        React.createElement("abbr", { title: abbreviatedText },
+            link && React.createElement("a", { href: link },
+                "+",
+                numberOfAdditionalItems,
+                " more"),
+            !link && React.createElement(Fragment, null,
                 "+",
                 numberOfAdditionalItems,
                 " more"))));

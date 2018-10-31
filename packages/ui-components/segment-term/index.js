@@ -41,6 +41,8 @@ export class SegmentTerm extends PureComponent {
                     'has-separator': hasSeparator,
                     [Styles['is-editable']]: editing,
                     'is-editable': editing,
+                    [Styles['is-live']]: !editable,
+                    'is-live': !editable,
                 }), onClick: editable && !editing ? onEdit : undefined },
                 editing && renderInputs && renderInputs(),
                 !editing && (React.createElement("p", null,

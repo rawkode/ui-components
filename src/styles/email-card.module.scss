@@ -120,9 +120,8 @@
   display: flex;
   align-items: center;
   flex-grow: 1;
-  flex-wrap: wrap;
   width: 100%;
-  padding-left: 68px;
+  padding-left: 68px; // width of .email-card-count
   border: 1px solid $slate-20;
   border-radius: $border-radius;
 

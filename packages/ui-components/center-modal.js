@@ -33,7 +33,7 @@ export class CenterModal extends Component {
                     'is-visible': open,
                 }) }, attributes),
                 hasX && (React.createElement(Icon, { type: "x", "data-role": "close-center-modal", onClick: onClose })),
-                renderHeader && React.createElement("h1", null, evaluateRenderProp(renderHeader)),
+                renderHeader && React.createElement("h2", null, evaluateRenderProp(renderHeader)),
                 evaluateRenderProp(renderBody),
                 renderFooter && (React.createElement("div", { className: cn('modal-footer', Styles['modal-footer']) }, evaluateRenderProp(this.props.renderFooter)))),
             React.createElement("div", { className: cn('modal-mask', Styles['modal-mask'], {

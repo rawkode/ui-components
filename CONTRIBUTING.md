@@ -13,10 +13,23 @@ In order to reduce wasted work and the need to refactor after the fact, we're go
 - Get approval.
 - Build the component!
 
-Eventually, we aim to move this into pull requests and engage in [documentation-driven development][ddd], but we don't have documentation system totally set up yet. So, stay tuned on that.
+Eventually, we aim to move this into pull requests and engage in [documentation-driven development][ddd], but we don't have the documentation system totally set up yet. So, stay tuned on that.
 
 [ddd]: https://medium.com/blacklane-engineering/documentation-driven-development-8b2ff119104f
 
+### Component Folder Structure
+
+When creating new components, please follow the structure below. This pattern has components organized by folder, with all the related files for that component within the folder (stories, styles, and types).
+
+```
+ui-components/
+├── src/
+│   ├── component-name/
+│       └── component-name.stories.tsx
+│       └── component-name.module.scss
+│       └── component-name.module.scss.d.ts
+│       └── index.tsx
+```
 ## Building and Testing
 
 The build and test structure is fairly primitive at the moment. There are various npm scripts that can be run:
@@ -120,7 +133,7 @@ return (
 ## Submitting a Component
 
 - **Storybook**: Make sure that you have added stories for your new component. When possible try to create stories that capture all of the different combinations of properties and options that can be passed to your component.
-- **Test Coverage**: Be sure that you're not causing a regression in test coverage. A coverage report is generated every time you run `yarn test`. We are aiming for 100% test coverage in components. This is _very_ important as we want to make sure we're not accidently implementing a breaking change to a cross-team dependency.
+- **Test Coverage**: Be sure that you're not causing a regression in test coverage. A coverage report is generated every time you run `yarn test`. We are aiming for 100% test coverage in components. This is _very_ important as we want to make sure we're not accidentally implementing a breaking change to a cross-team dependency.
 - **Linting and Formatting**: UI Components makes use of TSLint to verify the quality of the code and look for easily-missed mistakes through static analysis.
 - **Versioning**: Do not bump the version of the library in the `package.json`. This will either be done automatically or done manually to batch a number of breaking changes or new features.
 

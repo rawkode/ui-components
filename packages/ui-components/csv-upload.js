@@ -21,7 +21,7 @@ class CSVUpload extends PureComponent {
                     "Drag and drop your CSV file here or",
                     ' ',
                     React.createElement(FileSelectLink, null, "select a CSV file to upload"),
-                    "."))))), supportedType: 'text/csv' }));
+                    "."))))), supportedType: 'text/csv', supportedExtensions: ['csv'] }));
     }
 }
 export default CSVUpload;

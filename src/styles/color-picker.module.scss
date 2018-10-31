@@ -14,9 +14,15 @@
     margin: auto;
     padding: 0;
     width: 75px;
-
     input {
       text-transform: uppercase;
+    }
+  }
+  .text-disabled & {
+    :global .input-text-wrap {
+      input {
+        border: none;
+      }
     }
   }
 }

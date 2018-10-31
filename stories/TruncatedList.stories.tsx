@@ -23,6 +23,12 @@ stories.add('Standard - Limit 2', () => (
     link="http://lotr.wikia.com/wiki/Fellowship_of_the_Ring"
   />
 ));
+stories.add('Standard - Limit 2 - No Link - 1000 entries', () => (
+  <TruncatedList
+    items={[...Array(1000).keys()].map((i: number) => `${i}`)}
+    limit={limit}
+  />
+));
 
 stories.add('Standard - Limit Default', () => (
   <TruncatedList
@@ -42,7 +48,7 @@ stories.add('Custom Render Props', () => (
   <TruncatedList
     items={objectList}
     link="http://lotr.wikia.com/wiki/Fellowship_of_the_Ring"
-    renderItems={(items) => (
+    renderItems={items => (
       <Fragment>
         {items.map(({ name, dies }) => (
           <span key={name}>

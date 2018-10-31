@@ -52,6 +52,7 @@ class CSVUpload extends PureComponent<CSVUploadProps> {
           </Dropzone>
         )}
         supportedType={'text/csv'}
+        supportedExtensions={['csv']}
       />
     );
   }

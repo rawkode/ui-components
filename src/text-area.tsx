@@ -76,6 +76,7 @@ export class TextArea extends Component<
       ...attributes
     } = this.props;
 
+    const domAttributes = { ...attributes, maxHeight: null as number };
     const { focused, height } = this.state;
     const hasValue = !!value;
 
@@ -110,7 +111,7 @@ export class TextArea extends Component<
           onBlur={this.setBlurred}
           disabled={disabled}
           style={{ height }}
-          {...attributes}
+          {...domAttributes}
         />
         <textarea
           value={value}

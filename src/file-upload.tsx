@@ -18,6 +18,7 @@ export interface FileUploadProps {
   onInvalidFile?: (files: FileList) => void;
   render: FileUploadRenderCallback;
   supportedType: string;
+  supportedExtensions?: Array<string>; // check file extension to validate for windows
   validateFile?: (files: DataTransferItemList | FileList) => boolean;
 }
 
@@ -110,13 +111,14 @@ export class DroppedFile extends Component<DroppedFileProps> {
 }
 
 export class FileUpload extends Component<FileUploadProps, FileUploadState> {
-  public static defaultProps = {
+  public static defaultProps: Partial<FileUploadProps> = {
     onDragEnd: () => {},
     onDragLeave: () => {},
     onDragOver: () => {},
     onDrop: () => {},
     onFileSelect: () => {},
     onInvalidFile: () => {},
+    supportedExtensions: [],
   };
 
   public state: FileUploadState = {
@@ -194,10 +196,17 @@ export class FileUpload extends Component<FileUploadProps, FileUploadState> {
   };
 
   public fileTypeIsSupported = (files: DataTransferItemList | FileList) => {
-    const { supportedType } = this.props;
+    const { supportedType, supportedExtensions } = this.props;
     return some(files, (file: File) => {
-      // osx directories & apps have type of empty string.
-      return !!file.type && includes(supportedType, file.type);
+      // windows files, plus osx directories & apps have type of empty string.
+      return (
+        (!!file.type && includes(supportedType, file.type)) ||
+        some(
+          supportedExtensions,
+          supportedExtension =>
+            !!file.name && file.name.includes(`.${supportedExtension}`)
+        )
+      );
     });
   };
 

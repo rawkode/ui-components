@@ -105,10 +105,11 @@ export class FileUpload extends Component {
             return every(validations, validation => validation(files));
         };
         this.fileTypeIsSupported = (files) => {
-            const { supportedType } = this.props;
+            const { supportedType, supportedExtensions } = this.props;
             return some(files, (file) => {
-                // osx directories & apps have type of empty string.
-                return !!file.type && includes(supportedType, file.type);
+                // windows files, plus osx directories & apps have type of empty string.
+                return ((!!file.type && includes(supportedType, file.type)) ||
+                    some(supportedExtensions, supportedExtension => !!file.name && file.name.includes(`.${supportedExtension}`)));
             });
         };
         this.updateCurrentFile = (files, event) => {
@@ -148,6 +149,7 @@ FileUpload.defaultProps = {
     onDrop: () => { },
     onFileSelect: () => { },
     onInvalidFile: () => { },
+    supportedExtensions: [],
 };
 export default FileUpload;
 //# sourceMappingURL=file-upload.js.map

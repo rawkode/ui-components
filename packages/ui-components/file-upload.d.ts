@@ -10,6 +10,7 @@ export interface FileUploadProps {
     onInvalidFile?: (files: FileList) => void;
     render: FileUploadRenderCallback;
     supportedType: string;
+    supportedExtensions?: Array<string>;
     validateFile?: (files: DataTransferItemList | FileList) => boolean;
 }
 export interface FileUploadRenderCallbackArguments {
@@ -62,14 +63,7 @@ export declare class DroppedFile extends Component<DroppedFileProps> {
     render(): JSX.Element;
 }
 export declare class FileUpload extends Component<FileUploadProps, FileUploadState> {
-    static defaultProps: {
-        onDragEnd: () => void;
-        onDragLeave: () => void;
-        onDragOver: () => void;
-        onDrop: () => void;
-        onFileSelect: () => void;
-        onInvalidFile: () => void;
-    };
+    static defaultProps: Partial<FileUploadProps>;
     state: FileUploadState;
     fileInput: HTMLInputElement;
     handleDragOver: (event: any) => void;

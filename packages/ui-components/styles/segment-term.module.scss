@@ -1,4 +1,4 @@
-@import "./global/variables.scss";
+@import './global/variables.scss';
 
 .segment-term-wrap {
   p {
@@ -35,7 +35,7 @@
     width: 1px;
     height: 42px;
     border-left: 1px solid $slate-10;
-    content: "";
+    content: '';
   }
 
   &.is-editable {
@@ -96,6 +96,14 @@
 
   &.is-editable.has-radios {
     display: block;
+  }
+
+  &.is-live {
+    cursor: not-allowed;
+
+    .segment-term-edit {
+      display: none;
+    }
   }
 
   &.has-alert {

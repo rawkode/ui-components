@@ -28,6 +28,8 @@ services:
     build:
       context: .
     init: true
+      cache_from:
+        - docker.sendgrid.net/sendgrid/ui-components:latest
     volumes:
       - /etc/group:/etc/group:ro
       - /etc/passwd:/etc/passwd:ro
@@ -39,14 +41,13 @@ services:
       - ./packages/:/opt/sendgrid/ui-components/packages/
       - ./test_image/:/opt/sendgrid/ui-components/test_image/
 
-
   develop:
     image: docker.sendgrid.net/sendgrid/ui-components:latest
     build:
       context: .
     init: true
     volumes:
-    - /opt/sendgrid/ui-components/node_modules
-    - .:/opt/sendgrid/ui-components
+      - /opt/sendgrid/ui-components/node_modules
+      - .:/opt/sendgrid/ui-components
     ports:
-    - "6006:6006"
+      - '6006:6006'

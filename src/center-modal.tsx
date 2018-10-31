@@ -69,7 +69,7 @@ export class CenterModal extends Component<CenterModalProps> {
           {hasX && (
             <Icon type="x" data-role="close-center-modal" onClick={onClose} />
           )}
-          {renderHeader && <h1>{evaluateRenderProp(renderHeader)}</h1>}
+          {renderHeader && <h2>{evaluateRenderProp(renderHeader)}</h2>}
           {evaluateRenderProp(renderBody)}
           {renderFooter && (
             <div className={cn('modal-footer', Styles['modal-footer'])}>

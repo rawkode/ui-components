@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ICON_TYPES_FILE=./src/types/icons.ts
 

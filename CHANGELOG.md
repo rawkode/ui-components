@@ -1,4 +1,9 @@
 # CHANGELOG
+## 1.7.3
+- Fix subject line wrapping on email-card
+- Add is-live modifier to change cursor, hide icon
+## 1.7.2
+- Update contributing doc with component organization structure
 ## 1.7.1
 - Add style support for alerts that have tooltips with underlines
 - Adjust styles for tooltips w/ has-underline to use mixin

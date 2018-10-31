@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import cn from './utilities/classnames';
 
 export interface TruncatedListProps {
@@ -20,15 +20,19 @@ export const TruncatedList: React.SFC<TruncatedListProps> = ({
   ...attributes
 }) => {
   const shown = items.slice(0, limit);
+  const abbreviationTitle = items.slice(limit);
+  const abbreviatedText = abbreviationTitle.join(', ');
   const shownText = shown.join(', ');
   const truncated = items.slice(limit);
   const numberOfAdditionalItems = truncated.length;
   const hasAdditionalItems = numberOfAdditionalItems > 0;
+
   const additionalItemText = (
     <span>
       ,{' '}
-      <abbr>
-        <a href={link}>+{numberOfAdditionalItems} more</a>
+      <abbr title={abbreviatedText}>
+        {link && <a href={link}>+{numberOfAdditionalItems} more</a>}
+        {!link && <Fragment>+{numberOfAdditionalItems} more</Fragment>}
       </abbr>
     </span>
   );

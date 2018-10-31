@@ -5,6 +5,7 @@ import { InputType } from './types/inputs';
 import { Units } from './types/units';
 import { Omit } from './types/utils';
 import cn from './utilities/classnames';
+
 const convertInputValue = (value: string, inputType: InputType) => {
   return inputType === 'number' ? Number(value) : value;
 };
@@ -41,7 +42,7 @@ export interface TextInputProps {
   isLarge?: boolean;
   isSearch?: boolean;
   label?: string;
-  info?: string;
+  info?: React.ReactNode;
   onBlur?: (event: FocusEvent, value: string | number) => void;
   style?: CSSProperties;
   step?: number;
