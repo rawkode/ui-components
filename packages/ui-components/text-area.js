@@ -35,6 +35,7 @@ export class TextArea extends Component {
     }
     render() {
         const _a = this.props, { children, disabled, error, id, info, label, onChange: handleChange, required, scrollable, value, tooltip, tooltipDirection } = _a, attributes = __rest(_a, ["children", "disabled", "error", "id", "info", "label", "onChange", "required", "scrollable", "value", "tooltip", "tooltipDirection"]);
+        const domAttributes = Object.assign({}, attributes, { maxHeight: null });
         const { focused, height } = this.state;
         const hasValue = !!value;
         return (React.createElement("div", { className: cn('textarea-wrap', Styles['textarea-wrap'], {
@@ -52,7 +53,7 @@ export class TextArea extends Component {
                 'is-scrollable': scrollable,
             }) },
             React.createElement("label", { className: cn('textarea-label', Styles['textarea-label']), htmlFor: id }, label),
-            React.createElement("textarea", Object.assign({ id: id, value: value, onChange: handleChange, onFocus: this.setFocused, onBlur: this.setBlurred, disabled: disabled, style: { height } }, attributes)),
+            React.createElement("textarea", Object.assign({ id: id, value: value, onChange: handleChange, onFocus: this.setFocused, onBlur: this.setBlurred, disabled: disabled, style: { height } }, domAttributes)),
             React.createElement("textarea", { value: value, style: { height: 0, visibility: 'hidden', border: 0 }, ref: textarea => (this.textareaMeasurer = textarea) }),
             info && (React.createElement("span", { className: cn('textarea-info', Styles['textarea-info'], {
                     [Styles['is-error']]: error,
