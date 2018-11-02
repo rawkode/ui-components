@@ -5,7 +5,7 @@ services:
     image: ${IMAGETAG:-docker.sendgrid.net/sendgrid/ui-components:latest}
     user: ${MYUID:-0}
     build:
-     context: .
+      context: .
     init: true
     volumes:
       # Bootstrap the buildkite users into the docker container for permissions
@@ -27,9 +27,9 @@ services:
     # user: ${MYUID:-0}
     build:
       context: .
-    init: true
       cache_from:
         - docker.sendgrid.net/sendgrid/ui-components:latest
+    init: true
     volumes:
       - /etc/group:/etc/group:ro
       - /etc/passwd:/etc/passwd:ro
